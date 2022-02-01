@@ -11,5 +11,23 @@ while (count($array_numeri) < $n_items) {
     }
     $array_numeri[] = $numero_random;
 }
-var_dump($array_numeri);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <?php
+        for ($i=0; $i<count($array_numeri); $i++) {
+            echo '<p>' . $array_numeri[$i] . "</p>"; 
+        }
+        ?>
+    </div>
+</body>
+</html>
