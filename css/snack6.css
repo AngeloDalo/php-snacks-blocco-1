@@ -1,0 +1,14 @@
+.grey {
+    background-color: grey;
+}
+
+.green {
+    background-color: green;
+}
+
+.grey, .green {
+    width: 50%;
+    text-align: center;
+    margin: 5%;
+    padding: 2%;
+}
