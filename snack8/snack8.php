@@ -1,3 +1,7 @@
+<?php
+include __DIR__ . '/server/db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +18,21 @@
 
   <!-- main -->
   <main id="app">
-      <select name="tipologia" id="tipologia" v-model="textSearch"  @change="changeTipologia(textSearch)">
+  <form action="search.php">
+      <select name="tipologia" id="tipologia">
         <option value="all">all</option>
         <option value="elettrodomestico">elettrodomestico</option>
         <option value="elettronica">elettronica</option>
       </select>
+      <button>Cerca</button>
+    </form>
 
     <div class="row mt-5">
-        <div class="col-2" v-for="product in products">
-            <img v-bind:src="product.img" alt="">
-            <h1> {{ product.nome }} </h1>
-            <p> {{ product.prezzo }} </p>
-            <p> {{ product.tipologia }} </p>
-        </div>
+            <?php
+            foreach ($products as $product) {
+                include __DIR__ . '/partials/product.php';
+            }
+          ?>
     </div>
   </main>
 
